@@ -2,10 +2,10 @@
 #Nicholas Russell
 
 import lexer
+import parserr
 
-srcCode = "((12+3*5)+5/4)"
+srcCode = "1 * (2 + 5)"
 tokSeq = lexer.tokenize(srcCode)
-
-for eachTok in tokSeq:
-    print(eachTok.type, eachTok.value)
-
+rootNode = parserr.parse(tokSeq)
+parserr.printTree(rootNode)
+print()
