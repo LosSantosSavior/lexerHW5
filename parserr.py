@@ -43,12 +43,12 @@ def parsing(treeNodeList):
                 if lOp.type != "DUMMY":
                     lOp.rChild = rOp
                     rOp.parent = lOp
-                if lOp.type == "LPAREN":
-                    rOp.rChild = lOp
-                    lOp.parent = rOp
-                if lOp.type == "RPAREN":
-                    lOp.lChild = rOp
-                    rOp.parent = lOp
+            if node.type == "LPAREN":
+                rOp.rChild = lOp
+                lOp.parent = rOp
+            if node.type == "RPAREN":
+                lOp.lChild = rOp
+                rOp.parent = lOp
             else:
                 #left
                 lOp.rChild = node
